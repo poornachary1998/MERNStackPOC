@@ -1,0 +1,31 @@
+{
+  "name": "mernstackpoc",
+  "version": "1.0.0",
+  "description": "Revising Node and express concepts by POC.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poornachary1998/MERNStackPOC.git"
+  },
+  "author": "Poorna Chary",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/poornachary1998/MERNStackPOC/issues"
+  },
+  "homepage": "https://github.com/poornachary1998/MERNStackPOC#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mongoose": "^9.1.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
