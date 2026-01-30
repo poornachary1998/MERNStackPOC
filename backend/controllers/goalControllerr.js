@@ -6,7 +6,7 @@ const getGoals = async(req,res) =>{
     res.status(200).json({message : 'Get Goals'});
 }
 
-const postGoals = async(req, res) =>{
+const postGoals = AsyncHandler(async(req, res) =>{
     // Guard against req.body being undefined before accessing .text
     if(!req.body || !req.body.text){
          res.status(400);
@@ -14,12 +14,12 @@ const postGoals = async(req, res) =>{
     }
 
     return res.status(200).json({message: 'Post Goals'});
-}
+})
 
-const putGoals = async(req, res) =>{
+const putGoals = AsyncHandler(async(req, res) =>{
     res.status(200).json({message: `Put call ${req.params.id}`})
-}
-const deleteGoals = async(req, res) => {
+})
+const deleteGoals = AsyncHandler(async(req, res) => {
     res.status(200).json({message: `delete call ${req.params.id}`})
-}
+})
 module.exports = {getGoals, postGoals, putGoals,deleteGoals }
