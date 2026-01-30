@@ -1,11 +1,12 @@
 const express = require('express');
+const AsyncHandler = require('express-async-handler');
 
-const getGoals = (req,res) =>{
+const getGoals = async(req,res) =>{
    
     res.status(200).json({message : 'Get Goals'});
 }
 
-const postGoals = (req, res) =>{
+const postGoals = async(req, res) =>{
     // Guard against req.body being undefined before accessing .text
     if(!req.body || !req.body.text){
          res.status(400);
@@ -15,10 +16,10 @@ const postGoals = (req, res) =>{
     return res.status(200).json({message: 'Post Goals'});
 }
 
-const putGoals = (req, res) =>{
+const putGoals = async(req, res) =>{
     res.status(200).json({message: `Put call ${req.params.id}`})
 }
-const deleteGoals =(req, res) =>{
+const deleteGoals = async(req, res) => {
     res.status(200).json({message: `delete call ${req.params.id}`})
 }
 module.exports = {getGoals, postGoals, putGoals,deleteGoals }
