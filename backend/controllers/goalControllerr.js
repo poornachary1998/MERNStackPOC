@@ -6,12 +6,10 @@ const getGoals = (req,res) =>{
 }
 
 const postGoals = (req, res) =>{
-    console.log('POST /api/goals hit — headers:', req.headers['content-type']);
-    console.log('POST /api/goals body:', req.body);
-
     // Guard against req.body being undefined before accessing .text
     if(!req.body || !req.body.text){
-        return res.status(400).json({message: "Error: Check the payload"});
+         res.status(400);
+        throw new Error("Please add a text field")
     }
 
     return res.status(200).json({message: 'Post Goals'});
