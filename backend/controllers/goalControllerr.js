@@ -1,10 +1,11 @@
 const express = require('express');
 const AsyncHandler = require('express-async-handler');
+const {Goal} = require('../models/GoalModel');
 
-const getGoals = async(req,res) =>{
-   
-    res.status(200).json({message : 'Get Goals'});
-}
+const getGoals = AsyncHandler(async(req,res) =>{
+   const getGoals = await (Goal);
+    res.status(200).json({getGoals});
+})
 
 const postGoals = AsyncHandler(async(req, res) =>{
     // Guard against req.body being undefined before accessing .text

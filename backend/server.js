@@ -1,8 +1,14 @@
 const express = require('express');
+const colors = require('colors');
 const dotenv = require('dotenv').config();
-const port = process.env.PORT || 5000;
+const {mongooseConnectDB} = require('./config/db');
 const {ErrorHandler} = require('./middleware/ErrorHandlerMiddleware');
+
+const port = process.env.PORT || 5000;
+
 console.log(process.env.PORT)
+
+mongooseConnectDB();
 const app = express();
 
 app.use(express.json());
