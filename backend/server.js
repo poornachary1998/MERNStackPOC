@@ -33,6 +33,7 @@ app.use(express.urlencoded({ extended: false }))
 
 // Mount API route handlers. All requests to /api/goals are handled by this router
 app.use('/api/goals', require('./routes/goalRoutes'))
+app.use('/api/users', require('./routes/userRoutes'))
 
 // IMPORTANT: Error handler must be registered after routes so it can catch errors from controllers
 app.use(ErrorHandler)
