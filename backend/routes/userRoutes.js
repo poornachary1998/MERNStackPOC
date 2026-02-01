@@ -8,6 +8,6 @@ const { registerUser, loginUser, getMyAccount } = require('../controllers/userCo
 // Route: POST /api/users  (register a new user)
 router.post('/', registerUser);
 router.post('/login', loginUser);
-router.post('/myAccount', getMyAccount);
+router.get('/myAccount', getMyAccount);
 
 module.exports = router;
