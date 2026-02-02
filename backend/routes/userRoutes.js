@@ -5,9 +5,11 @@ const router = express.Router();
 // like { registerUser }, so require(...) alone would return that object instead of the function.
 const { registerUser, loginUser, getMyAccount } = require('../controllers/userController')
 
+const {protect} = require('../middleware/AuthMiddleware');
+
 // Route: POST /api/users  (register a new user)
 router.post('/', registerUser);
 router.post('/login', loginUser);
-router.get('/myAccount', getMyAccount);
+router.get('/myAccount', protect, getMyAccount);
 
 module.exports = router;

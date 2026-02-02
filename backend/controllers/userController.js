@@ -63,7 +63,13 @@ const loginUser = AsyncHandler(async (req, res) => {
 })
 
 const getMyAccount = AsyncHandler(async (req, res) => {
-    res.json({ message: 'get account data' })
+    const {_id, name, email} = await User.findById(req.user.id);
+
+    res.status(200).json({
+        id:_id,
+        name,
+        email
+    })
 })
 
 //creating a common function.. for JWT.
